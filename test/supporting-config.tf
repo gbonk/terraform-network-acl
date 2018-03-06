@@ -22,7 +22,7 @@ resource "aws_subnet" "public" {
 
 resource "aws_internet_gateway" "ig" {
 
-  vpc_id = "${aws_vpc.primary.id}"
+  vpc_id = "${aws_vpc.vpc.id}"
 }
 
 resource "aws_route" "public" {
