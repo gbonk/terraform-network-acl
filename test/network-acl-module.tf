@@ -13,7 +13,7 @@ module "acl-ssh" {
   source = ".."
 
   acl-id       = "${aws_network_acl.public.id}"
-  ingress-cidr = ["123.456.78.910/32"]
+  ingress-cidr = ["172.217.4.110/32"]
 
   ingress-rules = [
     {
