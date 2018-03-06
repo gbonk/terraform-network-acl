@@ -1,5 +1,13 @@
 
-# Allow the HQ to ssh into the network
+#Create the Network ACL that will be assigned to the public subnet.
+resource "aws_network_acl" "public" {
+
+  vpc_id      = "${aws_vpc.vpc.id}"
+  subnet_ids = ["${aws_subnet.public.id}"]
+}
+
+
+# Allow HQ to ssh into the network
 module "acl-ssh" {
 
   source = ".."
